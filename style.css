@@ -1,0 +1,186 @@
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #d0d0d5;
+  background-color: #08080c;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #18181f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 0px;
+}
+
+/* Cyan accent */
+::-webkit-scrollbar-thumb:hover {
+  background: #5fffffff;
+}
+
+.font-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.text-accent {
+  color: #00ffff;
+}
+
+.bg-accent {
+  background-color: #00ffff;
+}
+
+.border-accent {
+  border-color: #00ffff;
+}
+
+.ring-accent:focus {
+  --tw-ring-color: #00ffff;
+}
+
+.hover\:text-accent-light:hover {
+  color: #5fffff;
+}
+
+.hover\:bg-accent-dark:hover {
+  background-color: #00e6e6;
+}
+
+#ascii-output-wrapper {
+  background: repeating-linear-gradient(45deg,
+      #0f0f14, #0f0f14 2px,
+      #111117 2px, #111117 4px);
+  /* Subtle diagonal pattern */
+}
+
+#ascii-output {
+  font-family: 'Roboto Mono', monospace;
+  white-space: pre;
+  overflow: auto;
+  line-height: 1.0;
+  /* Tight for density */
+  font-size: 5px;
+  /* Dynamic based on density */
+  color: #b0b0c0;
+  /* Slightly muted output */
+  transition: opacity 0.2s ease-out;
+}
+
+#ascii-output.placeholder {
+  color: #555;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+}
+
+.control-panel {
+  background-color: rgba(17, 17, 23, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid #282830;
+}
+
+/* Custom Range Input */
+input[type="range"].styled-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: #40404f;
+  outline: none;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+input[type="range"].styled-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #00ffff;
+  border-radius: 0px;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="range"].styled-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #00ffff;
+  border-radius: 0px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Custom File Input & Drag Area */
+#drop-zone {
+  border: 2px dashed #40404f;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#drop-zone.dragover {
+  border-color: #00ffff;
+  background-color: rgba(0, 255, 255, 0.05);
+}
+
+/* Buttons */
+.button {
+  font-family: 'Roboto Mono', monospace;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  border: 1px solid transparent;
+  /* Base border */
+}
+
+.button-primary {
+  background-color: #00ffff;
+  color: #08080c;
+  border-color: #00ffff;
+  font-weight: 600;
+}
+
+.button-primary:hover {
+  background-color: #5fffff;
+  border-color: #5fffff;
+  transform: scale(1.02);
+}
+
+.button-primary:disabled {
+  background-color: #282830;
+  border-color: #282830;
+  color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: #9090a0;
+  border-color: #40404f;
+}
+
+.button-secondary:hover {
+  background-color: #18181f;
+  border-color: #505060;
+  color: #c0c0d0;
+}
+
+/* Subtle Grain */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23n)" opacity="0.03"/></svg>');
+  opacity: 0.5;
+}
